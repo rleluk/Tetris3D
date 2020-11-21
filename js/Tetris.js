@@ -1,4 +1,5 @@
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xdddddd);
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
 camera.position.z = 1000;
@@ -17,7 +18,7 @@ const boundingBoxMesh = new THREE.Mesh(
         BOUNDING_BOX.splitZ
     ),
     new THREE.MeshBasicMaterial({ 
-        color: 0xffaa00, 
+        color: 0x203002, 
         wireframe: true 
     })
 );
@@ -27,8 +28,13 @@ scene.add(boundingBoxMesh);
 // moving block 1 time per second
 const stepTime = 1000;
 var totalTime = 0;
-var lastTick = Date.now();
 var isGameOver = false;
+var lastTick;
+
+const boundingBox = new BoundingBox(scene, BOUNDING_BOX.splitX, BOUNDING_BOX.splitY, BOUNDING_BOX.splitZ);
+const movingBlock = new MovingBlock(scene, boundingBox); 
+
+////////////// LISTENERS
 
 const animate = function () {
     const now = Date.now();
@@ -40,19 +46,22 @@ const animate = function () {
         totalTime -= stepTime;
     }
 
-    renderer.render( scene, camera );
-    if (!isGameOver) requestAnimationFrame( animate );
+    renderer.render(scene, camera);
+    if (!isGameOver) requestAnimationFrame(animate);
 };
 
-const boundingBox = new BoundingBox(scene, BOUNDING_BOX.splitX, BOUNDING_BOX.splitY, BOUNDING_BOX.splitZ);
-const movingBlock = new MovingBlock(scene, boundingBox); 
-
-////////////// LISTENERS
-
-window.addEventListener('load', (event) => {
+const startGame = () => {
+    lastTick = Date.now()
+    document.getElementById('points-container').style.display = 'block';
+    document.getElementById('main-menu').style.display = 'none';
     movingBlock.generate();
     animate();
-})
+};
+
+window.addEventListener('load', (event) => {
+    renderer.render(scene, camera);
+    document.getElementById('start-button').onclick = startGame;
+});
 
 window.addEventListener('keydown', (event) => {
     switch(event.key.toUpperCase()) {

@@ -3,10 +3,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>Tetris 3D</title>
-		<style>
-			body { margin: 0; }
-			canvas { display: block; }
-		</style>
+		<link rel="stylesheet" href="index.css"/>
 	</head>
 	<body>
         <script src="js/Three.js"></script>
@@ -15,5 +12,19 @@
 		<script src="js/BoundingBox.js"></script>
 		<script src="js/MovingBlock.js"></script>
 		<script src="js/Tetris.js"></script>
+
+		<div id="main-menu">
+			<p id="help">
+				Strzałki - poruszanie klockami <br>
+				WASD + EQ - rotacja klocków <br>
+			</p>
+			<button id="start-button"> Start </button>
+		</div>
+		<div id="game-over">
+			<p> Koniec gry! </p>
+		</div>
+		<div id="points-container">
+			0
+		</div>
 	</body>
 </html>

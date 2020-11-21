@@ -112,6 +112,7 @@ class MovingBlock {
 
         if(this.checkCollision(true) === COLLISION.GROUND) {
             isGameOver = true;
+            document.getElementById('game-over').style.display = 'flex';
         }
         
         this.scene.add(this.mesh);

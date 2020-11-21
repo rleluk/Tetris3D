@@ -2,6 +2,7 @@ class BoundingBox {
     blocks = [];
     staticBlocks = []; // needed for checking if level is completed
     scene = null;
+    points = 0;
 
     constructor(scene, x, y, z) {
         this.scene = scene;
@@ -70,7 +71,8 @@ class BoundingBox {
         }
     
         if (points) {
-            //TODO: add points
+            this.points += points;
+            document.getElementById('points-container').innerHTML = `${this.points}`;
         }
     
         if (rebuild) {
