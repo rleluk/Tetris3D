@@ -1,5 +1,5 @@
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xdddddd);
+scene.background = new THREE.Color(0x000000);
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
 camera.position.z = 1000;
@@ -18,7 +18,7 @@ const boundingBoxMesh = new THREE.Mesh(
         BOUNDING_BOX.splitZ
     ),
     new THREE.MeshBasicMaterial({ 
-        color: 0x203002, 
+        color: 0x9c4406, 
         wireframe: true 
     })
 );

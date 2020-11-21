@@ -16,9 +16,9 @@ canvas {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid #fff;
+    border: 3px solid #9c4406;
     background-color: #000;
-    box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 0 0 15px #9c4406;
     color: #ddd;
     font-size: 30px;
     font-weight: bold;
@@ -32,10 +32,10 @@ canvas {
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    border: 3px solid #fff;
+    border: 3px solid #9c4406;
     background-color: #000;
     padding: 20px;
-    box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 0 0 15px #9c4406;
 }
 
 #help {
@@ -52,7 +52,7 @@ canvas {
     width: 100px;
     height: 40px;
     background-color: #000;
-    border: 3px solid #fff;
+    border: 3px solid #9c4406;
     font-size: 20px;
     font-weight: bold;
     color: #fff;
@@ -73,10 +73,10 @@ canvas {
     padding: 10px;
     top: 20px;
     left: 80px;
-    border: 3px solid #fff;
+    border: 3px solid #9c4406;
     background-color: #000;
     color: #fff;
     text-align: right;
-    box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 0 0 15px #9c4406;
     display: none;
 }

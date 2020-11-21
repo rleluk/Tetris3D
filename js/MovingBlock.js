@@ -95,7 +95,7 @@ class MovingBlock {
             geometry, 
             [
                 new THREE.MeshBasicMaterial({color: 0x000000, flatShading: true, wireframe: true, transparent: true}),
-                new THREE.MeshBasicMaterial({color: 0xff0000})
+                new THREE.MeshBasicMaterial({color: 0x9c4406})
             ]
         );
     
