@@ -36,7 +36,7 @@ class MovingBlock {
         this.position.y += y;
         this.position.z += z;
 
-        switch(this.checkCollision(true)) {
+        switch(this.checkCollision(z != 0)) {
             case COLLISION.WALL:
                 this.move(-x, -y, 0);
                 break;
